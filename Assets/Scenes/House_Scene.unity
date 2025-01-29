@@ -829,6 +829,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba6dc10f4b17ea4cab32f97045d48a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toggleOffButton:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Toggle Off Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: c82ff1b9-bf45-4d2f-ae2a-44ae4a22a0d8
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  toggleOnButton:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Toggle On Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 084d643b-1c6d-4733-b939-f68c9b984831
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   primaryButtonAction:
     m_UseReference: 1
     m_Action:
@@ -2840,6 +2864,148 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 674271303}
   m_SourcePrefab: {fileID: 100100000, guid: 53f20a3cf1fe44b468c0d33d5db11e66, type: 3}
+--- !u!1 &912106612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+  m_PrefabInstance: {fileID: 1364526431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &912106613 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+  m_PrefabInstance: {fileID: 1364526431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &912106614
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912106612}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.21000002, y: 0.0000000011874363, z: 0.29000002}
+  m_Center: {x: 0.00000047683525, y: 0.0005080596, z: -0.00000047683645}
+--- !u!114 &912106615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912106612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7229c9191f45342b16447ef61b92a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCam: {fileID: 1475141662}
+  triggerAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Trigger
+      m_Type: 0
+      m_ExpectedControlType: Button
+      m_Id: 0a2e8283-85f8-41e8-8290-0979982f3f3c
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -2439264783773714294, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
+  notepad: {fileID: 1021557603}
+  noteToUnlock: 1
+--- !u!114 &912106616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912106612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 912106615}
+        m_TargetAssemblyTypeName: PaperPickUp, Assembly-CSharp
+        m_MethodName: PickUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
 --- !u!1 &918389511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,6 +3052,7 @@ Transform:
   - {fileID: 1178985277}
   - {fileID: 697210877}
   - {fileID: 1701943456}
+  - {fileID: 912106613}
   - {fileID: 1021557602}
   - {fileID: 1952109292}
   - {fileID: 58077634}
@@ -3043,6 +3210,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba6dc10f4b17ea4cab32f97045d48a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toggleOffButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Toggle Off Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: f091cea3-e9de-4f9f-b235-eb3c96952317
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 6db6703e-d113-438c-83c3-b9cc97c26563
+        m_Path: 
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Toggle Off Button
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  toggleOnButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Toggle On Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b05903fd-a2f7-4c7b-a00c-43764158d146
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   primaryButtonAction:
     m_UseReference: 1
     m_Action:
@@ -4631,6 +4830,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4b97ed26bdc498444becc4ce7bc69eaf, type: 3}
   m_PrefabInstance: {fileID: 1361645713}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1364526431
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 918389512}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_Name
+      value: Paper (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.549
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.479
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.335
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.82044
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0052706217
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5716584
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0075642904
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -69.735
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 361.056
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e65a125d178e56b4a8244b8f67b24c43, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 912106616}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 912106615}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 912106614}
+  m_SourcePrefab: {fileID: 100100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
 --- !u!1001 &1369988453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5514,6 +5783,8 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -2439264783773714294, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
+  notepad: {fileID: 1021557603}
+  noteToUnlock: 0
 --- !u!114 &1701943460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6437,7 +6708,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
       propertyPath: m_Name
-      value: Paper (2)
+      value: Notepad root
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6489,6 +6760,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 113266121}
+    - targetCorrespondingSourceObject: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2026769189}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
       insertIndex: -1
@@ -6683,6 +6957,94 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d2869bfcb17962c42802809e8a9b2ffb, type: 3}
   m_PrefabInstance: {fileID: 2022048269}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2026769188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+  m_PrefabInstance: {fileID: 2059630136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2026769189 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+  m_PrefabInstance: {fileID: 2059630136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2026769190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026769188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba6dc10f4b17ea4cab32f97045d48a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleOffButton:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Toggle Off Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: c82ff1b9-bf45-4d2f-ae2a-44ae4a22a0d8
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  toggleOnButton:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Toggle On Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 084d643b-1c6d-4733-b939-f68c9b984831
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  primaryButtonAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Primary Button
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 1ce69fbe-cab2-4284-8a8a-c2c9ac812f59
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 630ac036-7532-4e03-86cc-35714c0e5769
+        m_Path: <XRController>{RightHand}/{PrimaryButton}
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Primary Button
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: -3599823989380923159, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
+  mainCam: {fileID: 1475141662}
+--- !u!65 &2026769191
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026769188}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.21000002, y: 0.0000000011874363, z: 0.29000002}
+  m_Center: {x: 0.00000047683525, y: 0.0005080596, z: -0.00000047683645}
 --- !u!1001 &2028098889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6889,6 +7251,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4525979494391414, guid: 35e841b08485a4c4ca32bd075e78e006, type: 3}
   m_PrefabInstance: {fileID: 2043695301}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2059630136
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1021557602}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_Name
+      value: Paper (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0023
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -2.3283062e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -69.735
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 361.056
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e65a125d178e56b4a8244b8f67b24c43, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2026769191}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2026769190}
+  m_SourcePrefab: {fileID: 100100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
 --- !u!1001 &2082312225
 PrefabInstance:
   m_ObjectHideFlags: 0
