@@ -89,6 +89,10 @@ public class Notepad : MonoBehaviour
 					}
 					print("disableIndex " + disableIndex);
 					print("enableIndex " + enableIndex);
+					if (disableIndex == 0)
+					{
+						break;
+					}
 					//disableIndex++; // Skip if already inactive
 				}
 			}
