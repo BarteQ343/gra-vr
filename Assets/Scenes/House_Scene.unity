@@ -433,63 +433,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
   m_PrefabInstance: {fileID: 1746901261}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &40754623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40754621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba6dc10f4b17ea4cab32f97045d48a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggleOffButton:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Toggle Off Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: c82ff1b9-bf45-4d2f-ae2a-44ae4a22a0d8
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  toggleOnButton:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Toggle On Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 084d643b-1c6d-4733-b939-f68c9b984831
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  primaryButtonAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Primary Button
-      m_Type: 1
-      m_ExpectedControlType: Button
-      m_Id: 1ce69fbe-cab2-4284-8a8a-c2c9ac812f59
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 630ac036-7532-4e03-86cc-35714c0e5769
-        m_Path: <XRController>{RightHand}/{PrimaryButton}
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Primary Button
-        m_Flags: 0
-      m_Flags: 0
-    m_Reference: {fileID: -3599823989380923159, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
-  mainCam: {fileID: 1475141662}
 --- !u!65 &40754624
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1461,9 +1404,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 113266124}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 113266123}
   m_SourcePrefab: {fileID: 100100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
 --- !u!4 &113266121 stripped
 Transform:
@@ -1475,63 +1415,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
   m_PrefabInstance: {fileID: 113266120}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &113266123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113266122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba6dc10f4b17ea4cab32f97045d48a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggleOffButton:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Toggle Off Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: c82ff1b9-bf45-4d2f-ae2a-44ae4a22a0d8
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  toggleOnButton:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Toggle On Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 084d643b-1c6d-4733-b939-f68c9b984831
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  primaryButtonAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Primary Button
-      m_Type: 1
-      m_ExpectedControlType: Button
-      m_Id: 1ce69fbe-cab2-4284-8a8a-c2c9ac812f59
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 630ac036-7532-4e03-86cc-35714c0e5769
-        m_Path: <XRController>{RightHand}/{PrimaryButton}
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Primary Button
-        m_Flags: 0
-      m_Flags: 0
-    m_Reference: {fileID: -3599823989380923159, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
-  mainCam: {fileID: 1475141662}
 --- !u!65 &113266124
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3713,15 +3596,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3937235
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.797003
+      value: 0.0015
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.3376782
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3762,9 +3645,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2111034468}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2111034473}
   m_SourcePrefab: {fileID: 100100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
 --- !u!1 &518106305 stripped
 GameObject:
@@ -7399,6 +7279,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  highestIndex: 0
   primaryButtonAction:
     m_UseReference: 1
     m_Action:
@@ -11877,7 +11758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0014
+      value: 0.0017
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11922,9 +11803,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 40754624}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 40754623}
   m_SourcePrefab: {fileID: 100100000, guid: 8fa7deb79d061f04f9fdf3c0091cade4, type: 3}
 --- !u!1 &1784227635
 GameObject:
@@ -13952,63 +13830,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.21000002, y: 0.0000000011874363, z: 0.29000002}
   m_Center: {x: 0.00000047683525, y: 0.0005080596, z: -0.00000047683645}
---- !u!114 &2111034473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2111034466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba6dc10f4b17ea4cab32f97045d48a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggleOffButton:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Toggle Off Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: c82ff1b9-bf45-4d2f-ae2a-44ae4a22a0d8
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  toggleOnButton:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Toggle On Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 084d643b-1c6d-4733-b939-f68c9b984831
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  primaryButtonAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Primary Button
-      m_Type: 1
-      m_ExpectedControlType: Button
-      m_Id: 1ce69fbe-cab2-4284-8a8a-c2c9ac812f59
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 630ac036-7532-4e03-86cc-35714c0e5769
-        m_Path: <XRController>{RightHand}/{PrimaryButton}
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Primary Button
-        m_Flags: 0
-      m_Flags: 0
-    m_Reference: {fileID: -3599823989380923159, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
-  mainCam: {fileID: 1475141662}
 --- !u!1 &2114870112
 GameObject:
   m_ObjectHideFlags: 0

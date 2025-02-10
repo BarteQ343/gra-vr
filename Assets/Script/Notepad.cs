@@ -13,11 +13,12 @@ public class Notepad : MonoBehaviour
 	private List<Transform> children = new List<Transform>(); // Store child objects
 	private Dictionary<Transform, bool> childStates = new Dictionary<Transform, bool>(); // Track state per child
 	private Dictionary<Transform, bool> childUnlocked = new Dictionary<Transform, bool>(); // Track state per child
-	private Vector3[] childOffsets;
 
 	private int disableIndex = 0; // Tracks which child is being disabled next
 	private int enableIndex = 0;  // Tracks which child is being enabled next
 
+	[HideInInspector]
+	public int highestIndex = 0;
 
 	public InputActionProperty primaryButtonAction;
 	bool isNotebookOpen = false;
@@ -34,11 +35,6 @@ public class Notepad : MonoBehaviour
 			childUnlocked[child] = false;
 			child.gameObject.SetActive(childStates[child]);
 		}
-		childOffsets = new Vector3[children.Count];
-		for (int i = 0; i < children.Count; i++)
-		{
-			childOffsets[i] = children[i].localPosition; // Save initial local positions
-		}
 	}
 
 	void Update()
@@ -50,24 +46,27 @@ public class Notepad : MonoBehaviour
 		{
 			isNotebookOpen = !isNotebookOpen; // Toggle state
 			Debug.Log($"Primary button (A/X) pressed! isNotebookOpen: {isNotebookOpen}");
-		}
+            UpdateChildPositions();
+        }
 		if (isNotebookOpen == true)
-		{
-			gameObject.transform.position = mainCam.transform.position + (mainCam.transform.forward / 3);
+        {
+            gameObject.transform.position = mainCam.transform.position + (mainCam.transform.forward / 3);
 			gameObject.transform.LookAt((mainCam.transform));
 			gameObject.transform.rotation *= Quaternion.Euler(90, 0, 0);
-			UpdateChildPositions();
 			if (toggleOffButton.action.WasPressedThisFrame())
 			{
 				while (disableIndex < children.Count)
 				{
 					Transform child = children[disableIndex];
 
-                    if (childStates[child]) // Only disable active ones
+					if (childStates[child]) // Only disable active ones
 					{
 						child.gameObject.SetActive(false);
-						disableIndex++;
-						if (enableIndex > 0)
+                        if (disableIndex > 0)
+                        {
+                            disableIndex--;
+                        }
+                        if (enableIndex > 0)
 						{
 							enableIndex--;
 						}
@@ -76,20 +75,23 @@ public class Notepad : MonoBehaviour
 						break;
 						 // Stop after disabling one
 					}
-                    if (disableIndex > children.Count)
+					if (disableIndex > children.Count)
+					{
+						break;
+					}
+                    if (disableIndex > 0)
                     {
-                        break;
-                    }
-                    disableIndex++; // Skip if already inactive
+                        disableIndex--;
+                    } // Skip if already inactive
                     if (enableIndex > 0)
-                    {
-                        enableIndex--;
-                    }
-                    print("disableIndex " + disableIndex);
-                    print("enableIndex " + enableIndex);
-                    //disableIndex++; // Skip if already inactive
-                }
-            }
+					{
+						enableIndex--;
+					}
+					print("disableIndex " + disableIndex);
+					print("enableIndex " + enableIndex);
+					//disableIndex++; // Skip if already inactive
+				}
+			}
 
 			// Toggle ON: Enable one inactive child at a time
 			if (toggleOnButton.action.WasPressedThisFrame())
@@ -102,27 +104,27 @@ public class Notepad : MonoBehaviour
 						child.gameObject.SetActive(true);
 						childStates[child] = true;
 						enableIndex++;
-						if (disableIndex > 0)
-						{
-							disableIndex--;
-						}
-						print("disableIndex " + disableIndex);
+                        if (disableIndex < children.Count - 1)
+                        {
+                            disableIndex++;
+                        }
+                        print("disableIndex " + disableIndex);
 						print("enableIndex " + enableIndex);
 						break;
-                    }
-                    if (enableIndex > children.Count)
+					}
+					if (enableIndex > children.Count)
+					{
+						break;
+					}
+					if (disableIndex < children.Count - 1)
                     {
-                        break;
+                        disableIndex++;
                     }
-                    enableIndex++; // Skip if already active
-                    if (disableIndex > 0)
-                    {
-                        disableIndex--;
-                    }
-                    print("disableIndex " + disableIndex);
-                    print("enableIndex " + enableIndex);
+					enableIndex++; // Skip if already active
+					print("disableIndex " + disableIndex);
+					print("enableIndex " + enableIndex);
 
-                }
+				}
 			}
 		}
 		if (isNotebookOpen == false)
@@ -137,7 +139,7 @@ public class Notepad : MonoBehaviour
 		{
 			if (childStates[children[i]]) // Only move active children
 			{
-				children[i].position = transform.position + transform.rotation * childOffsets[i];
+				children[i].position += new Vector3(0,0.0002f,0);
 			}
 		}
 	}
@@ -151,22 +153,26 @@ public class Notepad : MonoBehaviour
 			child.gameObject.SetActive(isActive);
 			childUnlocked[child] = true;
 		}
-        int highestIndex = children
-        .Select((child, index) => new { Index = index, IsActive = childStates[child] })
-        .Where(item => item.IsActive)
-        .Select(item => item.Index)
-        .DefaultIfEmpty(-1)
-        .Max();
 
-		if (disableIndex == 0 || childIndex > highestIndex)
+        if (childIndex > highestIndex)
         {
             disableIndex = childIndex;
         }
-        foreach (Transform child in transform)
-        {
-            childStates[child] = childUnlocked[child];
-            child.gameObject.SetActive(childStates[child]);
-        }
+
+        highestIndex = children
+		.Select((child, index) => new { Index = index, IsActive = childStates[child] })
+		.Where(item => item.IsActive)
+		.Select(item => item.Index)
+		.DefaultIfEmpty(-1)
+		.Max();
+
+		foreach (Transform child in transform)
+		{
+			childStates[child] = childUnlocked[child];
+			child.gameObject.SetActive(childStates[child]);
+		}
+		print("disable index is" + disableIndex);
+        print("highest index is" + highestIndex);
     }
 	
 }
