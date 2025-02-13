@@ -12,35 +12,47 @@ public class Opener : MonoBehaviour
 
     public void OpenDoor()
 	{
-		if (keyToDoor == null && unlockedByDefault == true && audioSourceUnlocked != null)
+		if (keyToDoor == null && unlockedByDefault == true)
 		{
 			if (anim.GetBool("open") == false)
 			{
 				print("opening");
-				anim.SetBool("open", true);
-				audioSourceUnlocked.Play();
-			}
+				anim.SetBool("open", true); 
+				if (audioSourceUnlocked != null)
+                {
+                    audioSourceUnlocked.Play();
+                }
+            }
 			else
 			{
 				print("closing");
 				anim.SetBool("open", false);
-                audioSourceUnlocked.Play();
+				if (audioSourceUnlocked != null)
+				{
+					audioSourceUnlocked.Play();
+				}
 			}
 		}
-		else if (keyToDoor.unlocked == true && audioSourceUnlocked != null)
+		else if (keyToDoor.unlocked == true)
 		{
 			if (anim.GetBool("open") == false)
 			{
 				print("opening");
-				anim.SetBool("open", true);
-                audioSourceUnlocked.Play();
-			}
+				anim.SetBool("open", true); 
+				if (audioSourceUnlocked != null)
+                {
+                    audioSourceUnlocked.Play();
+                }
+            }
 			else
 			{
 				print("closing");
-				anim.SetBool("open", false);
-                audioSourceUnlocked.Play();
-			}
+				anim.SetBool("open", false); 
+				if (audioSourceUnlocked != null)
+                {
+                    audioSourceUnlocked.Play();
+                }
+            }
 		}
 		else if (keyToDoor.unlocked == false)
 		{
