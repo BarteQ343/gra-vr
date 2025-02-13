@@ -12,7 +12,7 @@ public class Opener : MonoBehaviour
 
     public void OpenDoor()
 	{
-		if (keyToDoor == null && unlockedByDefault == true)
+		if (keyToDoor == null && unlockedByDefault == true && audioSourceUnlocked != null)
 		{
 			if (anim.GetBool("open") == false)
 			{
@@ -27,7 +27,7 @@ public class Opener : MonoBehaviour
                 audioSourceUnlocked.Play();
 			}
 		}
-		else if (keyToDoor.unlocked == true)
+		else if (keyToDoor.unlocked == true && audioSourceUnlocked != null)
 		{
 			if (anim.GetBool("open") == false)
 			{
@@ -44,7 +44,10 @@ public class Opener : MonoBehaviour
 		}
 		else if (keyToDoor.unlocked == false)
 		{
-			audioSourceLocked.Play();
+			if (audioSourceLocked != null)
+			{
+                audioSourceLocked.Play();
+            }
 		}
 	}
 }

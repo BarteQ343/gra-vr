@@ -1,18 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class House_to_Outro : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void ShowOutro()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadScene("Outro", LoadSceneMode.Single);
     }
 }
