@@ -5686,7 +5686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyToDoor: {fileID: 0}
   anim: {fileID: 518106310}
-  unlockedByDefault: 0
+  unlockedByDefault: 1
   audioSourceUnlocked: {fileID: 0}
   audioSourceLocked: {fileID: 0}
 --- !u!114 &518106313
@@ -13451,7 +13451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyToDoor: {fileID: 0}
   anim: {fileID: 1095595085}
-  unlockedByDefault: 0
+  unlockedByDefault: 1
   audioSourceUnlocked: {fileID: 0}
   audioSourceLocked: {fileID: 0}
 --- !u!114 &1095595088
