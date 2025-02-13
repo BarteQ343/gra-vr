@@ -143,7 +143,7 @@ public class Notepad : MonoBehaviour
 		{
 			if (childStates[children[i]]) // Only move active children
 			{
-				children[i].position += new Vector3(0,0.0002f,0);
+				children[i].position += new Vector3(0,0.001f,0);
 			}
 		}
 	}
